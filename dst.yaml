@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dst-demo
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      dst: web
+  template:
+    metadata:
+      labels:
+        dst: web
+    spec:
+      containers:
+      - name: dst-site
+        image: symfony-tutorial:1.0
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dst-entrypoint
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    dst: web
+  ports:
+  - port: 8080
+    targetPort: 8080
+    nodePort: 30000
