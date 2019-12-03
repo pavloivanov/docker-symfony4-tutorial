@@ -16,9 +16,6 @@ RUN curl --insecure https://getcomposer.org/composer.phar -o /usr/bin/composer &
 #RUN ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 #RUN "date"
 
-#COPY . /var/www/symfony_tutorial
 WORKDIR /var/www/symfony_tutorial
 
 CMD ["php", "-S", "0.0.0.0:8080"]
-
-docker container run -v d:/Dev/docker-symfony4-tutorial:/var/www/symfony_tutorial --publish 8000:8080 --detach --name bb docker-symfony4-tutorial:1.0
