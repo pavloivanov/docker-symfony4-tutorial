@@ -29,6 +29,9 @@
             "config/packages/sensio_framework_extra.yaml"
         ]
     },
+    "symfony/expression-language": {
+        "version": "v5.0.1"
+    },
     "symfony/twig-pack": {
         "version": "v1.0.0"
     },
